@@ -55,17 +55,12 @@
                                     <li>Alamat<span>{{$siswa->alamat}}</span></li>
                                 </ul>
                             </div>
-
-                            <div class="text-center"><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning">Edit Profile</a></div>
                         </div>
                         <!-- END PROFILE DETAIL -->
                     </div>
                     <!-- END LEFT COLUMN -->
                     <!-- RIGHT COLUMN -->
                     <div class="profile-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Tambah Nilai
-                        </button>
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Mata Pelajaran</h3>
@@ -79,7 +74,6 @@
                                             <th>SEMESTER</th>
                                             <th>NILAI</th>
                                             <th>GURU</th>
-                                            <th>AKSI</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -88,9 +82,8 @@
                                             <td>{{$mapel->kode}}</td>
                                             <td>{{$mapel->nama}}</td>
                                             <td>{{$mapel->semester}}</td>
-                                            <td><a href="#" class="nilai" data-type="text" data-pk="{{$mapel->id}}" data-url="/api/siswa/{{$siswa->id}}/editnilai" data-title="Masukkan Nilai">{{$mapel->pivot->nilai}}</a></td>
-                                            <td><a href="/guru/{{$mapel->guru_id}}/profile">{{$mapel->guru->nama}}</td>
-                                            <td><a href="/siswa/{{$siswa->id}}/{{$mapel->id}}/deletenilai" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Di Hapus ?')">Delete</a></td>
+                                            <td>{{$mapel->pivot->nilai}}</a></td>
+                                            <td>{{$mapel->guru->nama}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
